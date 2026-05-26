@@ -1,0 +1,7 @@
+# Liste aller Python-Pakete, die MatchZeit braucht#
+# alle benötigten Pakete werden automatisch installiert:
+# pip install -r requirements.txt
+
+pandas
+openpyxl
+streamlit

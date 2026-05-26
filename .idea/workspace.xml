@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="EXCEL korrekt speichern">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Programmliste_Kriterien_Python.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/Programmliste_Kriterien_Python.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/streamlit/secrets.toml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3DU9ci3UcUiXQVAE0ppHpRut3T2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/CBaeu/PycharmProjects/MatchZeit/MatchZeit&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-d7ad00fb9fc3-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23726.102" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="" />
+      <created>1778325862564</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1778325862564</updated>
+    </task>
+    <task id="LOCAL-00001" summary="richtiger interpreter ausgewählt, updates für die packages">
+      <option name="closed" value="true" />
+      <created>1778327399093</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1778327399094</updated>
+    </task>
+    <task id="LOCAL-00002" summary="für github">
+      <option name="closed" value="true" />
+      <created>1778327480643</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1778327480643</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Debug Anzeige (gespeicherte Benutzerantworten, gemappte Ergebnisse) als Kommentar">
+      <option name="closed" value="true" />
+      <created>1779260052786</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1779260052790</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fragen, Gewichtung, KO-Kriterien, Ergebnisse werden hintereinander angezeigt; Zurück-Button">
+      <option name="closed" value="true" />
+      <created>1779261655399</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1779261655399</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Überschrift verändert, Top 3 Übersicht entfernt, Ergebnisse über Druckfunktion des Browsers speichern">
+      <option name="closed" value="true" />
+      <created>1779432568622</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1779432568622</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Neue name_kriterium, kein neutral bei multiselect">
+      <option name="closed" value="true" />
+      <created>1779433579099</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1779433579099</updated>
+    </task>
+    <task id="LOCAL-00007" summary="neutral wird mit 0,5 bewertet">
+      <option name="closed" value="true" />
+      <created>1779687711284</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1779687711284</updated>
+    </task>
+    <task id="LOCAL-00008" summary="egal entfernt">
+      <option name="closed" value="true" />
+      <created>1779687778069</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1779687778069</updated>
+    </task>
+    <task id="LOCAL-00009" summary="egal entfernt">
+      <option name="closed" value="true" />
+      <created>1779687810114</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1779687810114</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Evaluierungsfragebogen per E-Mail versendbar">
+      <option name="closed" value="true" />
+      <created>1779775269452</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1779775269452</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Evaluierungsfragebogen per E-Mail in EXCEL-Format versendbar">
+      <option name="closed" value="true" />
+      <created>1779775967279</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1779775967279</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Platz zwischen Antwortmöglichkeiten und Zurück-Button, &quot;Frage überspringen&quot; bei Multiselect wird als Antwort gespeichert">
+      <option name="closed" value="true" />
+      <created>1779777341906</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1779777341906</updated>
+    </task>
+    <task id="LOCAL-00013" summary="EXCEl-Datei bereinigt, Antwortmapping durchgeschaut">
+      <option name="closed" value="true" />
+      <created>1779778821335</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1779778821335</updated>
+    </task>
+    <task id="LOCAL-00014" summary="app_passwort auslagern">
+      <option name="closed" value="true" />
+      <created>1779809989579</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1779809989582</updated>
+    </task>
+    <task id="LOCAL-00015" summary="EXCEL korrekt speichern">
+      <option name="closed" value="true" />
+      <created>1779810639945</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1779810639945</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="richtiger interpreter ausgewählt, updates für die packages" />
+    <MESSAGE value="für github" />
+    <MESSAGE value="Debug Anzeige (gespeicherte Benutzerantworten, gemappte Ergebnisse) als Kommentar" />
+    <MESSAGE value="Fragen, Gewichtung, KO-Kriterien, Ergebnisse werden hintereinander angezeigt; Zurück-Button" />
+    <MESSAGE value="Überschrift verändert, Top 3 Übersicht entfernt, Ergebnisse über Druckfunktion des Browsers speichern" />
+    <MESSAGE value="Neue name_kriterium, kein neutral bei multiselect" />
+    <MESSAGE value="neutral wird mit 0,5 bewertet" />
+    <MESSAGE value="egal entfernt" />
+    <MESSAGE value="Evaluierungsfragebogen per E-Mail versendbar" />
+    <MESSAGE value="Evaluierungsfragebogen per E-Mail in EXCEL-Format versendbar" />
+    <MESSAGE value="Platz zwischen Antwortmöglichkeiten und Zurück-Button, &quot;Frage überspringen&quot; bei Multiselect wird als Antwort gespeichert" />
+    <MESSAGE value="EXCEl-Datei bereinigt, Antwortmapping durchgeschaut" />
+    <MESSAGE value="app_passwort auslagern" />
+    <MESSAGE value="EXCEL korrekt speichern" />
+    <option name="LAST_COMMIT_MESSAGE" value="EXCEL korrekt speichern" />
+  </component>
+</project>

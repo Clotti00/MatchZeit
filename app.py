@@ -48,7 +48,7 @@ if st.session_state.seite == "start":
         **So funktioniert’s:**
 
         - Geben Sie die benötigten Informationen im Fragebogen ein.
-        - Wählen Sie bei Bedarf bis zu drei KO-Kriterien aus oder wichten Sie Ihre Antworten.
+        - Wählen Sie bei Bedarf bis zu drei KO-Kriterien aus oder gewichten Sie Ihre Antworten.
         - Das Programm berechnet passende Übereinstimmungen.
         - Sie erhalten Ihre Ergebnisse übersichtlich angezeigt.
 

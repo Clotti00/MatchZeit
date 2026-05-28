@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="EXCEL korrekt speichern">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/Programmliste_Kriterien_Python.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/Programmliste_Kriterien_Python.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/streamlit/secrets.toml" beforeDir="false" />

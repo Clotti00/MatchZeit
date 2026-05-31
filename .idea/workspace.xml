@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="Button &quot;Ergebnisse speichern&quot; fest oben rechts anhängen">
+    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="&quot;Matching berechnen&quot; erst auswählbar, wenn maximal 3 KO-Kriterien ausgewählt worden sind">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780248083309</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="&quot;Matching berechnen&quot; erst auswählbar, wenn maximal 3 KO-Kriterien ausgewählt worden sind">
+      <option name="closed" value="true" />
+      <created>1780248520679</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1780248520682</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,6 +251,7 @@
     <MESSAGE value="Evaluierung Fragebogen überarbeitet, Frage nach Demografie und Datennutzung, Fragen gekürzt" />
     <MESSAGE value="Ergebnisstabelle farblich gestaltet, Überscchrift &quot;Ergebnisse&quot; entfernt" />
     <MESSAGE value="Button &quot;Ergebnisse speichern&quot; fest oben rechts anhängen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Button &quot;Ergebnisse speichern&quot; fest oben rechts anhängen" />
+    <MESSAGE value="&quot;Matching berechnen&quot; erst auswählbar, wenn maximal 3 KO-Kriterien ausgewählt worden sind" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Matching berechnen&quot; erst auswählbar, wenn maximal 3 KO-Kriterien ausgewählt worden sind" />
   </component>
 </project>

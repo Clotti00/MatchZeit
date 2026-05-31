@@ -35,6 +35,21 @@ if "doppelt_gewichtete_fragen" not in st.session_state:
 if "ko_kriterien" not in st.session_state:
     st.session_state.ko_kriterien = []
 
+# Druckbutton entfernen, wenn man nicht auf der Ergebnisseite ist
+if st.session_state.seite != "ergebnis":
+    components.html(
+        """
+        <script>
+        const doc = window.parent.document;
+        const alterButton = doc.getElementById("print-button-fixed");
+        if (alterButton) {
+            alterButton.remove();
+        }
+        </script>
+        """,
+        height=0
+    )
+
 
 # Willkommensseite
 if st.session_state.seite == "start":

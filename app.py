@@ -150,16 +150,44 @@ else:
                     st.session_state.seite = "ko"
                     st.rerun()
 
-            with col2:
-                if st.button("Ergebnisse speichern"): # Ergebnisse speichern, Download Button
-                    components.html(
-                        """
-                        <script>
-                            window.parent.print();
-                        </script>
-                        """,
-                        height=0
-                    )
+            components.html(
+                """
+                <script>
+                const doc = window.parent.document;
+
+                // alten Button entfernen, falls er durch Streamlit-Rerun schon existiert
+                const alterButton = doc.getElementById("print-button-fixed");
+                if (alterButton) {
+                    alterButton.remove();
+                }
+
+                const button = doc.createElement("button");
+                button.id = "print-button-fixed";
+                button.innerText = "Ergebnisse speichern";
+
+                button.style.position = "fixed";
+                button.style.top = "20px";
+                button.style.right = "30px";
+                button.style.zIndex = "999999";
+                button.style.backgroundColor = "#f63366";
+                button.style.color = "white";
+                button.style.border = "none";
+                button.style.borderRadius = "8px";
+                button.style.padding = "0.6rem 1rem";
+                button.style.fontSize = "1rem";
+                button.style.fontWeight = "600";
+                button.style.cursor = "pointer";
+                button.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
+
+                button.onclick = function() {
+                    window.parent.print();
+                };
+
+                doc.body.appendChild(button);
+                </script>
+                """,
+                height=0
+            )
 
             zeige_matching_ergebnisse(
                 st.session_state.matching_ergebnisse,

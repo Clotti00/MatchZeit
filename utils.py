@@ -8,7 +8,6 @@ from evaluation import zeige_evaluierungsfragebogen
 #####################
 # zeigt Matching Ergebnisse
 def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, kriterien):
-    st.subheader("Matching-Ergebnisse")
 
     if matching_ergebnisse.empty:
         st.warning(
@@ -36,7 +35,7 @@ def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, 
         ascending=False
     ).head(3)
 
-    st.subheader("Top 3 Ergebnisse")  # kurze Ausgabe: Platz 1: Name des Programms (matching_prozent)
+    st.subheader("Top 3 Matching-Ergebnisse")  # kurze Ausgabe: Platz 1: Name des Programms (matching_prozent)
 
     for platz, (_, programm) in enumerate(top_ergebnisse.iterrows(), start=1):
         st.write(
@@ -139,8 +138,60 @@ def zeige_programmvergleich(top_ergebnisse, bewertungen, kriterien):
 
     vergleich_df = pd.DataFrame(vergleichsdaten)
 
+    # Zellen einfärben
+    def zellenfarbe(wert):
+        if wert == "✔":
+            return "background-color: #c8e6c9;"
+        elif wert == "✘":
+            return "background-color: #ffcdd2;"
+        # elif wert == "-":
+        #     return "background-color: #f5f5f5;"
+        return ""
+
+    vergleich_df_styled = vergleich_df.style.map(
+        zellenfarbe,
+        subset=vergleich_df.columns[1:]
+    )
+
+    # def farbe_symbole(wert): # Symbole einfärben
+    #     if wert == "✔":
+    #         return "color: green; font-weight: bold;"
+    #     elif wert == "✘":
+    #         return "color: red; font-weight: bold;"
+    #     elif wert == "-":
+    #         return "color: gray;"
+    #     return ""
+    #
+    # vergleich_df_styled = vergleich_df.style.map(
+    #     farbe_symbole,
+    #     subset=vergleich_df.columns[1:]
+    # )
+
+    # st.markdown( # Legende eingefärbte Symbole
+    #     """
+    #     **Legende**
+    #
+    #     ✔ = Kriterium erfüllt
+    #
+    #     ✘ = Kriterium nicht erfüllt
+    #
+    #     - = Keine Angabe vorhanden
+    #     """
+    # )
+
+    leg1, leg2, leg3 = st.columns(3) # Legende eingefärbte Zellen
+
+    with leg1:
+        st.markdown("🟩 **✔ Kriterium erfüllt**")
+
+    with leg2:
+        st.markdown("🟥 **✘ Kriterium nicht erfüllt**")
+
+    with leg3:
+        st.markdown("⬜ **- Keine Angabe vorhanden**")
+
     st.dataframe(
-        vergleich_df,
+        vergleich_df_styled,
         use_container_width=True,
         hide_index=True
     )

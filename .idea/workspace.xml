@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="EXCEL korrekt speichern">
+    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="Button &quot;Ergebnisse speichern&quot; fest oben rechts anhängen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Programmliste_Kriterien_Python.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/Programmliste_Kriterien_Python.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamlit/secrets.toml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +13,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Clotti00"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Clotti00/MatchZeit.git",
+    "accountId": "c471de68-cbf5-4a9b-8434-108e4e0ffddf"
+  }
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -172,7 +186,31 @@
       <option name="project" value="LOCAL" />
       <updated>1779810639945</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Evaluierung Fragebogen überarbeitet, Frage nach Demografie und Datennutzung, Fragen gekürzt">
+      <option name="closed" value="true" />
+      <created>1780246052402</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1780246052404</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Ergebnisstabelle farblich gestaltet, Überscchrift &quot;Ergebnisse&quot; entfernt">
+      <option name="closed" value="true" />
+      <created>1780247256630</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1780247256631</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Button &quot;Ergebnisse speichern&quot; fest oben rechts anhängen">
+      <option name="closed" value="true" />
+      <created>1780248083307</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1780248083309</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,6 +239,9 @@
     <MESSAGE value="EXCEl-Datei bereinigt, Antwortmapping durchgeschaut" />
     <MESSAGE value="app_passwort auslagern" />
     <MESSAGE value="EXCEL korrekt speichern" />
-    <option name="LAST_COMMIT_MESSAGE" value="EXCEL korrekt speichern" />
+    <MESSAGE value="Evaluierung Fragebogen überarbeitet, Frage nach Demografie und Datennutzung, Fragen gekürzt" />
+    <MESSAGE value="Ergebnisstabelle farblich gestaltet, Überscchrift &quot;Ergebnisse&quot; entfernt" />
+    <MESSAGE value="Button &quot;Ergebnisse speichern&quot; fest oben rechts anhängen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Button &quot;Ergebnisse speichern&quot; fest oben rechts anhängen" />
   </component>
 </project>

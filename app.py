@@ -129,8 +129,11 @@ else:
                     st.session_state.seite = "gewichtung"
                     st.rerun()
 
-            with col2:
-                if st.button("Matching berechnen"):
+            with col2: # Button nur aktiv, wenn maximal 3 KO-Kriterien ausgewählt worden sind
+                if st.button(
+                        "Matching berechnen",
+                        disabled=not st.session_state.get("ko_auswahl_gueltig", True)
+                ):
                     st.session_state.matching_ergebnisse = berechne_matching(
                         nutzerwerte,
                         bewertungen,

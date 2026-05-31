@@ -286,9 +286,11 @@ def waehle_ko_kriterien(nutzerwerte, kriterien):
         placeholder="Bitte auswählen"
     )
 
-    if len(auswahl) > 3: # Nutzer darf maximal drei Kriterien auswählen
+    if len(auswahl) > 3:  # Nutzer darf maximal drei Kriterien auswählen
         st.warning("Bitte wählen Sie maximal 3 Kriterien aus.")
-        auswahl = auswahl[:3]
+        st.session_state.ko_auswahl_gueltig = False
+    else:
+        st.session_state.ko_auswahl_gueltig = True
 
     return [optionen[name] for name in auswahl]
 

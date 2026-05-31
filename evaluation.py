@@ -92,14 +92,42 @@ def zeige_evaluierungsfragebogen():
             "Die Erläuterungen zu den Ergebnissen waren hilfreich."
         ],
         "Gesamteindruck": [
-            "Ich würde das Tool erneut verwenden.",
-            "Ich halte das Tool insgesamt für verständlich und übersichtlich."
+            "Ich halte das Tool insgesamt für verständlich und übersichtlich.",
+            "Ich würde das Tool weiter empfehlen."
         ]
     }
 
     antworten = {
         "zeitstempel": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     }
+
+    #####################
+    # Angaben zur Person
+    #####################
+
+    st.subheader("Angaben zur Person")
+
+    antworten["alter"] = st.number_input(
+        "Wie alt sind Sie?",
+        min_value=0,
+        max_value=120,
+        step=1,
+        key="eval_alter"
+    )
+
+    antworten["landwirtschaft_taetig"] = st.radio(
+        "Sind Sie derzeit in der Landwirtschaft tätig?",
+        ["Ja", "Nein"],
+        index=None,
+        key="eval_landwirtschaft_taetig"
+    )
+
+    antworten["entscheidungsbeteiligung"] = st.radio(
+        "Sind Sie an Entscheidungen zu Personal-, Verwaltungs- oder Softwarefragen in Ihrem Betrieb beteiligt?",
+        ["Ja", "Nein"],
+        index=None,
+        key="eval_entscheidungsbeteiligung"
+    )
 
     frage_nummer = 1
 
@@ -132,6 +160,22 @@ def zeige_evaluierungsfragebogen():
     antworten["freitext_sonstiges"] = st.text_area(
         "Weitere Bemerkungen",
         key="eval_freitext_sonstiges"
+    )
+
+    st.subheader("Angaben zur Datennutzung")
+
+    antworten["nach_bestem_wissen"] = st.radio(
+        "Haben Sie den Fragebogen nach bestem Wissen und Gewissen beantwortet?",
+        ["Ja", "Nein"],
+        index=None,
+        key="eval_nach_bestem_wissen"
+    )
+
+    antworten["nutzung_wissenschaftlich"] = st.radio(
+        "Dürfen Ihre anonymisierten Angaben für die wissenschaftliche Auswertung im Rahmen dieser Masterarbeit verwendet werden?",
+        ["Ja", "Nein"],
+        index=None,
+        key="eval_nutzung_wissenschaftlich"
     )
 
     if st.button("Evaluierung senden"):

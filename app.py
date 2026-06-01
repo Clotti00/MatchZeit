@@ -91,37 +91,6 @@ else:
         if st.session_state.seite == "fragebogen":
             nutzerantworten = zeige_fragebogen(fragen)
 
-
-        elif st.session_state.seite == "gewichtung":
-            st.header("Gewichtung")
-
-            nutzerantworten = st.session_state.nutzerantworten
-
-            st.session_state.doppelt_gewichtete_fragen = waehle_doppelte_gewichtung(
-                nutzerantworten,
-                fragen
-            )
-
-            col1, spacer, col2 = st.columns([1, 6, 1])
-
-            with col1:
-                if st.button("Zurück"): # man kommt zurück zum Fragebogen und kann letzte Frage wieder beantworten
-                    st.session_state.fragebogen_abgeschlossen = False
-
-                    if "nutzerantworten" in st.session_state:
-                        st.session_state.frage_index = max(
-                            len(st.session_state.nutzerantworten) - 1,
-                            0
-                        )
-
-                    st.session_state.seite = "fragebogen"
-                    st.rerun()
-
-            with col2:
-                if st.button("Weiter"):
-                    st.session_state.seite = "ko"
-                    st.rerun()
-
         elif st.session_state.seite == "ko":
             st.header("KO-Kriterien")
 
@@ -137,17 +106,64 @@ else:
                 kriterien
             )
 
-            col1, spacer, col2 = st.columns([1, 2, 1])
+            col1, col2 = st.columns(2)
 
             with col1:
-                if st.button("Zurück"):
+                if st.button(
+                        "Zurück zum Fragebogen",
+                        use_container_width=True
+                ):
+                    st.session_state.fragebogen_abgeschlossen = False
+
+                    if "nutzerantworten" in st.session_state:
+                        st.session_state.frage_index = max(
+                            len(st.session_state.nutzerantworten) - 1,
+                            0
+                        )
+
+                    st.session_state.seite = "fragebogen"
+                    st.rerun()
+
+            with col2:
+                if st.button(
+                        "Weiter zur Gewichtung",
+                        disabled=not st.session_state.get("ko_auswahl_gueltig", True),
+                        use_container_width=True
+                ):
                     st.session_state.seite = "gewichtung"
                     st.rerun()
 
-            with col2: # Button nur aktiv, wenn maximal 3 KO-Kriterien ausgewählt worden sind
+
+        elif st.session_state.seite == "gewichtung":
+            st.header("Gewichtung")
+
+            nutzerantworten = st.session_state.nutzerantworten
+
+            st.session_state.doppelt_gewichtete_fragen = waehle_doppelte_gewichtung(
+                nutzerantworten,
+                fragen,
+                st.session_state.ko_kriterien
+            )
+
+            nutzerwerte = mappe_antworten_auf_werte(
+                nutzerantworten,
+                antwortmapping
+            )
+
+            col1, col2 = st.columns(2)
+
+            with col1:
+                if st.button(
+                        "Zurück zu den KO-Kriterien",
+                        use_container_width=True
+                ):
+                    st.session_state.seite = "ko"
+                    st.rerun()
+
+            with col2:
                 if st.button(
                         "Matching berechnen",
-                        disabled=not st.session_state.get("ko_auswahl_gueltig", True)
+                        use_container_width=True
                 ):
                     st.session_state.matching_ergebnisse = berechne_matching(
                         nutzerwerte,
@@ -160,12 +176,11 @@ else:
                     st.session_state.seite = "ergebnis"
                     st.rerun()
 
-
         elif st.session_state.seite == "ergebnis":
             col1, spacer, col2 = st.columns([1, 1, 1])
             with col1:
-                if st.button("Zurück zu den KO-Kriterien"):
-                    st.session_state.seite = "ko"
+                if st.button("Zurück zur Gewichtung"):
+                    st.session_state.seite = "gewichtung"
                     st.rerun()
 
             components.html(

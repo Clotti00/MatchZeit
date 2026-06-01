@@ -199,7 +199,10 @@ def zeige_programmvergleich(top_ergebnisse, bewertungen, kriterien):
 
 #####################
 # Gewichtung
-def waehle_doppelte_gewichtung(nutzerantworten, fragen):
+def waehle_doppelte_gewichtung(nutzerantworten, fragen, ausgeschlossene_kriterien=None):
+
+    if ausgeschlossene_kriterien is None: # KO-Fragen sind ausgeschlossen für Auswahl Gewichtung
+        ausgeschlossene_kriterien = []
 
     st.write(
         """
@@ -211,8 +214,9 @@ def waehle_doppelte_gewichtung(nutzerantworten, fragen):
     )
 
     beantwortete_fragen = fragen[
-        fragen["kriterium_id"].isin(nutzerantworten.keys())
-    ]
+        fragen["kriterium_id"].isin(nutzerantworten.keys()) &
+        ~fragen["kriterium_id"].isin(ausgeschlossene_kriterien)
+        ]
 
     optionen = {}
 
@@ -402,7 +406,7 @@ def zeige_fragebogen(fragen):
 
     if st.session_state.frage_index >= len(sichtbare_fragen):
         st.session_state.fragebogen_abgeschlossen = True
-        st.session_state.seite = "gewichtung"
+        st.session_state.seite = "ko"
         st.rerun()
 
     aktuelle_frage = sichtbare_fragen[st.session_state.frage_index]

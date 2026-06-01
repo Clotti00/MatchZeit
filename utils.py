@@ -40,7 +40,7 @@ def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, 
     for platz, (_, programm) in enumerate(top_ergebnisse.iterrows(), start=1):
         st.write(
             f"Platz {platz}: "
-            f"{programm['programm_name']} "
+            f"**{programm['programm_name']}** "
             f"({programm['matching_prozent']} %)"
         )
 

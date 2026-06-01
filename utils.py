@@ -435,19 +435,21 @@ def zeige_fragebogen(fragen):
             key=f"widget_{kriterium_id}"
         )
 
-        col1, col2, spacer, col3 = st.columns([2, 2, 3, 3])
+        col1, col2, col3 = st.columns(3)
 
         with col1:
             if st.button(
                     "Zurück",
-                    disabled=st.session_state.frage_index == 0
+                    disabled=st.session_state.frage_index == 0,
+                    use_container_width=True
             ):
                 st.session_state.frage_index -= 1
                 st.rerun()
 
         with col2:
             if kriterium_id in nutzerantworten:
-                if st.button("Weiter"):
+                if st.button("Weiter",
+                    use_container_width=True):
                     st.session_state.frage_index += 1
                     st.rerun()
 
@@ -479,11 +481,12 @@ def zeige_fragebogen(fragen):
 
         st.write("")
 
-        col1, col2, spacer, col3 = st.columns([2, 2, 3, 3])
+        col1, col2, col3 = st.columns(3)
 
         with col1:
             if st.button(
                     "Zurück",
+                    use_container_width=True,
                     disabled=st.session_state.frage_index == 0
             ):
                 st.session_state.frage_index -= 1
@@ -491,12 +494,14 @@ def zeige_fragebogen(fragen):
 
         with col2:
             if kriterium_id in nutzerantworten:
-                if st.button("Weiter"):
+                if st.button("Weiter",
+                    use_container_width=True):
                     st.session_state.frage_index += 1
                     st.rerun()
 
         with col3:
-            if st.button("Frage überspringen"):
+            if st.button("Frage überspringen",
+                use_container_width=True):
                 nutzerantworten[kriterium_id] = "Frage überspringen"
                 st.session_state.frage_index += 1
                 st.rerun()

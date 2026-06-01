@@ -153,32 +153,6 @@ def zeige_programmvergleich(top_ergebnisse, bewertungen, kriterien):
         subset=vergleich_df.columns[1:]
     )
 
-    # def farbe_symbole(wert): # Symbole einfärben
-    #     if wert == "✔":
-    #         return "color: green; font-weight: bold;"
-    #     elif wert == "✘":
-    #         return "color: red; font-weight: bold;"
-    #     elif wert == "-":
-    #         return "color: gray;"
-    #     return ""
-    #
-    # vergleich_df_styled = vergleich_df.style.map(
-    #     farbe_symbole,
-    #     subset=vergleich_df.columns[1:]
-    # )
-
-    # st.markdown( # Legende eingefärbte Symbole
-    #     """
-    #     **Legende**
-    #
-    #     ✔ = Kriterium erfüllt
-    #
-    #     ✘ = Kriterium nicht erfüllt
-    #
-    #     - = Keine Angabe vorhanden
-    #     """
-    # )
-
     leg1, leg2, leg3 = st.columns(3) # Legende eingefärbte Zellen
 
     with leg1:
@@ -278,25 +252,48 @@ def waehle_ko_kriterien(nutzerwerte, kriterien):
         for _, row in moegliche_kriterien.iterrows()
     }
 
-    vorherige_auswahl = [ # vorherige Antwort bleibt beim Zurückgehen erhalten
-        name for name, kriterium_id in optionen.items()
-        if kriterium_id in st.session_state.ko_kriterien
-    ]
-
-    auswahl = st.multiselect(
-        "Wählen Sie bis zu 3 Kriterien aus, die zwingend erfüllt sein müssen:",
-        list(optionen.keys()),
-        default=vorherige_auswahl,
-        placeholder="Bitte auswählen"
+    st.write(
+        "Wählen Sie bis zu 3 Kriterien aus, die zwingend erfüllt sein müssen:"
     )
 
-    if len(auswahl) > 3:  # Nutzer darf maximal drei Kriterien auswählen
-        st.warning("Bitte wählen Sie maximal 3 Kriterien aus.")
-        st.session_state.ko_auswahl_gueltig = False
-    else:
-        st.session_state.ko_auswahl_gueltig = True
+    # Checkboxen beim ersten Laden mit der bisherigen Auswahl vorbelegen
+    for anzeigename, kriterium_id in optionen.items():
+        key = f"ko_{kriterium_id}"
 
-    return [optionen[name] for name in auswahl]
+        if key not in st.session_state:
+            st.session_state[key] = kriterium_id in st.session_state.ko_kriterien
+
+    # Aktuelle Auswahl direkt aus den Checkboxen lesen
+    aktuelle_auswahl = [
+        kriterium_id
+        for kriterium_id in optionen.values()
+        if st.session_state.get(f"ko_{kriterium_id}", False)
+    ]
+
+    max_erreicht = len(aktuelle_auswahl) >= 3
+
+    auswahl = []
+
+    for anzeigename, kriterium_id in optionen.items():
+        key = f"ko_{kriterium_id}"
+
+        checkbox = st.checkbox(
+            anzeigename,
+            key=key,
+            disabled=(
+                    max_erreicht
+                    and not st.session_state.get(key, False)
+            )
+        )
+
+        if checkbox:
+            auswahl.append(kriterium_id)
+
+    st.write("")  # Leerzeile zwischen Auswahl und Buttons
+
+    st.session_state.ko_auswahl_gueltig = True
+
+    return auswahl
 
 #####################
 # ordnet Textantworten des Nutzers den numerischen Wert zu
@@ -424,16 +421,26 @@ def zeige_fragebogen(fragen):
     st.markdown(f"### {frage_text}")
 
     if antwort_datentyp == "multiple_select":
-        antwort = st.multiselect(
-            "Mehrfachauswahl möglich",
-            optionen,
-            default=( # gespeicherter Wert bleibt erhalten, bis Nutzer etwas anderes auswählt
-                nutzerantworten.get(kriterium_id, [])
-                if isinstance(nutzerantworten.get(kriterium_id), list)
-                else []
-            ),
-            key=f"widget_{kriterium_id}"
+        ausgewaehlte_optionen = []
+
+        gespeicherte_antworten = (
+            nutzerantworten.get(kriterium_id, [])
+            if isinstance(nutzerantworten.get(kriterium_id), list)
+            else []
         )
+
+        for option in optionen:
+            if st.checkbox(
+                    option,
+                    value=option in gespeicherte_antworten,
+                    key=f"{kriterium_id}_{option}"
+            ):
+                ausgewaehlte_optionen.append(option)
+
+        antwort = ausgewaehlte_optionen
+        nutzerantworten[kriterium_id] = antwort
+
+        st.write("") # Leerzeile zwischen Dropdown und Buttons
 
         col1, col2, col3 = st.columns(3)
 
@@ -447,11 +454,13 @@ def zeige_fragebogen(fragen):
                 st.rerun()
 
         with col2:
-            if kriterium_id in nutzerantworten:
-                if st.button("Weiter",
-                    use_container_width=True):
-                    st.session_state.frage_index += 1
-                    st.rerun()
+            if st.button(
+                    "Weiter",
+                    disabled=len(antwort) == 0,
+                    use_container_width=True
+            ):
+                st.session_state.frage_index += 1 # "Weiter" anklickbar, wenn mindestens eine Checkbox ausgewählt wurde
+                st.rerun()
 
         with col3:
             if st.button(

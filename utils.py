@@ -426,20 +426,22 @@ def waehle_ko_kriterien(nutzerwerte, kriterien):
 
     auswahl = []
 
-    for anzeigename, kriterium_id in optionen.items():
-        key = f"ko_{kriterium_id}"
+    with st.container(height=400):
 
-        checkbox = st.checkbox(
-            anzeigename,
-            key=key,
-            disabled=(
-                    max_erreicht
-                    and not st.session_state.get(key, False)
+        for anzeigename, kriterium_id in optionen.items():
+            key = f"ko_{kriterium_id}"
+
+            checkbox = st.checkbox(
+                anzeigename,
+                key=key,
+                disabled=(
+                        max_erreicht
+                        and not st.session_state.get(key, False)
+                )
             )
-        )
 
-        if checkbox:
-            auswahl.append(kriterium_id)
+            if checkbox:
+                auswahl.append(kriterium_id)
 
     st.write("")  # Leerzeile zwischen Auswahl und Buttons
 

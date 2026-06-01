@@ -1,0 +1,9 @@
+# Streamlit Secrets
+.streamlit/secrets.toml
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# PyCharm
+.idea/workspace.xml

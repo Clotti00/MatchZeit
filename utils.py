@@ -172,6 +172,158 @@ def zeige_programmvergleich(top_ergebnisse, bewertungen, kriterien):
 #####################
 
 #####################
+# Ergebnisse speichern
+def erzeuge_ergebnis_html(matching_ergebnisse, programme_info, bewertungen, kriterien):
+    matching_ergebnisse = matching_ergebnisse.merge(
+        programme_info,
+        on="programm_id",
+        how="left"
+    )
+
+    top_ergebnisse = matching_ergebnisse.sort_values(
+        by="matching_prozent",
+        ascending=False
+    ).head(3)
+
+    html = """
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Matching-Ergebnisse</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 40px;
+                color: #222;
+            }
+            h1, h2, h3 {
+                color: #111;
+            }
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 20px;
+                font-size: 12px;
+            }
+            th, td {
+                border: 1px solid #ccc;
+                padding: 6px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            .programm {
+                margin-top: 30px;
+                padding-top: 15px;
+                border-top: 1px solid #ccc;
+            }
+        </style>
+    </head>
+    <body>
+    """
+
+    html += "<h1>Matching-Ergebnisse</h1>"
+    html += "<h2>Top 3 Matching-Ergebnisse</h2>"
+
+    for platz, (_, programm) in enumerate(top_ergebnisse.iterrows(), start=1):
+        html += (
+            f"<p>Platz {platz}: "
+            f"<strong>{programm['programm_name']}</strong> "
+            f"({programm['matching_prozent']} %)</p>"
+        )
+
+    html += "<h2>Übersicht der Top 3 Programme</h2>"
+
+    for platz, (_, programm) in enumerate(top_ergebnisse.iterrows(), start=1):
+        html += f"<div class='programm'>"
+        html += f"<h3>{platz}. {programm['programm_name']}</h3>"
+
+        if pd.notna(programm["kurzbeschreibung"]):
+            html += f"<p><strong>{programm['kurzbeschreibung']}</strong></p>"
+
+        if pd.notna(programm["anbieter"]):
+            html += f"<p><strong>Anbieter:</strong> {programm['anbieter']}</p>"
+
+        if pd.notna(programm["zielgruppe"]):
+            html += f"<p><strong>Zielgruppe:</strong> {programm['zielgruppe']}</p>"
+
+        if pd.notna(programm["erfassungsmedium"]):
+            html += f"<p><strong>Erfassungsmedien:</strong> {programm['erfassungsmedium']}</p>"
+
+        if pd.notna(programm["besonderheiten"]):
+            html += f"<p><strong>Besonderheiten:</strong> {programm['besonderheiten']}</p>"
+
+        html += f"<p><strong>Matching:</strong> {programm['matching_prozent']} %</p>"
+        html += (
+            f"<p><strong>Bewertete Kriterien:</strong> "
+            f"{programm['bewertete_kriterien']} von "
+            f"{programm['moegliche_kriterien']} möglichen Kriterien</p>"
+        )
+
+        if pd.notna(programm["website"]):
+            html += f"<p><strong>Website:</strong> {programm['website']}</p>"
+
+        html += "</div>"
+
+    html += "<h2>Programmvergleich</h2>"
+
+    aktive_kriterien = kriterien[
+        kriterien["aktiv_im_matching"] == 1
+    ]
+
+    vergleichsdaten = []
+
+    for _, kriterium in aktive_kriterien.iterrows():
+        kriterium_id = kriterium["kriterium_id"]
+        kriterium_name = kriterium["kriterium_name"]
+
+        zeile = {
+            "Kriterium": kriterium_name
+        }
+
+        for _, programm in top_ergebnisse.iterrows():
+            programm_id = programm["programm_id"]
+            programm_name = programm["programm_name"]
+
+            programm_bewertung = bewertungen[
+                bewertungen["programm_id"] == programm_id
+            ]
+
+            if programm_bewertung.empty:
+                wert_text = "-"
+            else:
+                wert = programm_bewertung.iloc[0][kriterium_id]
+
+                if pd.isna(wert):
+                    wert_text = "-"
+                elif int(wert) == 1:
+                    wert_text = "✔"
+                elif int(wert) == 0:
+                    wert_text = "✘"
+                else:
+                    wert_text = str(wert)
+
+            zeile[programm_name] = wert_text
+
+        vergleichsdaten.append(zeile)
+
+    vergleich_df = pd.DataFrame(vergleichsdaten)
+
+    html += vergleich_df.to_html(
+        index=False,
+        escape=False
+    )
+
+    html += """
+    </body>
+    </html>
+    """
+
+    return html
+#####################
+
+#####################
 # Gewichtung
 def waehle_doppelte_gewichtung(nutzerantworten, fragen, ausgeschlossene_kriterien=None):
 

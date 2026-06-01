@@ -8,12 +8,12 @@ from data_loader import lade_excel_datei
 from matching import berechne_matching
 import streamlit.components.v1 as components # Um Druckfunktion im Browser zu öffnen
 from utils import (
-#    zeige_erfolgsmeldung_einmal,
     zeige_fragebogen,
     mappe_antworten_auf_werte,
     waehle_ko_kriterien,
     zeige_matching_ergebnisse,
     waehle_doppelte_gewichtung,
+    erzeuge_ergebnis_html,
 )
 st.title("MatchZeit")
 
@@ -53,7 +53,6 @@ if st.session_state.seite != "ergebnis":
 
 # Willkommensseite
 if st.session_state.seite == "start":
-    # st.header("Willkommen!")
 
     st.write(
         """
@@ -82,11 +81,6 @@ else:
         daten = lade_excel_datei(pfad)
 
         programme_info, bewertungen, kriterien, fragen, antwortmapping = daten
-
-        # zeige_erfolgsmeldung_einmal(
-        #     "Daten wurden erfolgreich geladen.",
-        #     "daten_geladen"
-        # )
 
         if st.session_state.seite == "fragebogen":
             nutzerantworten = zeige_fragebogen(fragen)
@@ -183,16 +177,23 @@ else:
                     st.session_state.seite = "gewichtung"
                     st.rerun()
 
+            druck_html = erzeuge_ergebnis_html(
+                st.session_state.matching_ergebnisse,
+                programme_info,
+                bewertungen,
+                kriterien
+            )
+
             components.html(
-                """
+                f"""
                 <script>
                 const doc = window.parent.document;
 
                 // alten Button entfernen, falls er durch Streamlit-Rerun schon existiert
                 const alterButton = doc.getElementById("print-button-fixed");
-                if (alterButton) {
+                if (alterButton) {{
                     alterButton.remove();
-                }
+                }}
 
                 const button = doc.createElement("button");
                 button.id = "print-button-fixed";
@@ -212,9 +213,14 @@ else:
                 button.style.cursor = "pointer";
                 button.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
 
-                button.onclick = function() {
-                    window.parent.print();
-                };
+                button.onclick = function() {{
+                    const printWindow = window.open("", "_blank");
+                    printWindow.document.open();
+                    printWindow.document.write({druck_html!r});
+                    printWindow.document.close();
+                    printWindow.focus();
+                    printWindow.print();
+                }};
 
                 doc.body.appendChild(button);
                 </script>

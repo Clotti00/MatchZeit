@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="Stand 01.06.2026 8:48Uhr">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="Stand 02.06.2026 10:11Uhr">
       <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,18 +20,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Clotti00"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Clotti00&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Clotti00/MatchZeit.git",
-    "accountId": "c471de68-cbf5-4a9b-8434-108e4e0ffddf"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Clotti00/MatchZeit.git&quot;,
+    &quot;accountId&quot;: &quot;c471de68-cbf5-4a9b-8434-108e4e0ffddf&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -268,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780296506189</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Stand 02.06.2026 10:11Uhr">
+      <option name="closed" value="true" />
+      <created>1780387917208</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1780387917208</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -307,6 +313,7 @@
     <MESSAGE value="dropdowns zu Checkboxen bei K06 und KO-Kriterium" />
     <MESSAGE value="Rechtschreibfehler korrigieren" />
     <MESSAGE value="Stand 01.06.2026 8:48Uhr" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stand 01.06.2026 8:48Uhr" />
+    <MESSAGE value="Stand 02.06.2026 10:11Uhr" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stand 02.06.2026 10:11Uhr" />
   </component>
 </project>

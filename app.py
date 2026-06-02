@@ -2,6 +2,7 @@
 # Interaktion mit dem Nutzer##################
 # Streamlit-UI, Fragebogen, Ergebnisanzeige###
 ##############################################
+# Stand 02.06.2026
 
 import streamlit as st
 from data_loader import lade_excel_datei

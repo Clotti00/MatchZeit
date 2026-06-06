@@ -7,7 +7,7 @@ from evaluation import zeige_evaluierungsfragebogen
 
 #####################
 # zeigt Matching Ergebnisse
-def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, kriterien):
+def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, kriterien, nutzerwerte):
 
     if matching_ergebnisse.empty:
         st.warning(
@@ -22,12 +22,6 @@ def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, 
         on="programm_id",
         how="left"
     )
-
-    # Top 3 Programme nach Matching-Prozent
-    top_ergebnisse = matching_ergebnisse.sort_values(
-        by="matching_prozent",
-        ascending=False
-    ).head(3)
 
     # Top 3 Programme nach Matching-Prozent
     top_ergebnisse = matching_ergebnisse.sort_values(
@@ -80,7 +74,8 @@ def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, 
     zeige_programmvergleich(
         top_ergebnisse,
         bewertungen,
-        kriterien
+        kriterien,
+        nutzerwerte
     )
 
     st.markdown("---")
@@ -94,7 +89,7 @@ def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, 
 
 #####################
 # Vergleichstabelle Programme Ergebnisse
-def zeige_programmvergleich(top_ergebnisse, bewertungen, kriterien):
+def zeige_programmvergleich(top_ergebnisse, bewertungen, kriterien, nutzerwerte):
     st.subheader("Programmvergleich")
 
     aktive_kriterien = kriterien[
@@ -125,14 +120,16 @@ def zeige_programmvergleich(top_ergebnisse, bewertungen, kriterien):
             else:
                 wert = programm_bewertung.iloc[0][kriterium_id]
 
-                if pd.isna(wert):
+                nutzerwert = nutzerwerte.get(kriterium_id)
+
+                if nutzerwert is None:
                     wert_text = "-"
-                elif int(wert) == 1:
+                elif pd.isna(wert):
+                    wert_text = "-"
+                elif float(wert) == float(nutzerwert):
                     wert_text = "✔"
-                elif int(wert) == 0:
-                    wert_text = "✘"
                 else:
-                    wert_text = str(wert)
+                    wert_text = "✘"
 
             zeile[programm_name] = wert_text # Name der Tabellenspalte: Programm 1, Programm 2, ...
 

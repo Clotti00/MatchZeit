@@ -230,11 +230,17 @@ else:
                 height=0
             )
 
+            nutzerwerte = mappe_antworten_auf_werte(
+                st.session_state.nutzerantworten,
+                antwortmapping
+            )
+
             zeige_matching_ergebnisse(
                 st.session_state.matching_ergebnisse,
                 programme_info,
                 bewertungen,
-                kriterien
+                kriterien,
+                nutzerwerte
             )
 
     except Exception as e:

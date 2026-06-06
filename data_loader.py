@@ -73,7 +73,7 @@ def lade_excel_datei(pfad: str):
 
         pruefe_spalten(
             kriterien,
-            ["kriterium_id", "aktiv_im_matching", "kriterium_name", "kriterium_beschreibung_1", "mapping_typen", "gewichtung_standard"],
+            ["kriterium_id", "aktiv_im_matching", "kriterium_name", "mapping_typen", "gewichtung_standard"],
             "kriterien"
         )
 
@@ -85,7 +85,7 @@ def lade_excel_datei(pfad: str):
 
         pruefe_spalten(
             antwortmapping,
-            ["kriterium_id", "antwort_text", "antwort_wert", "ziel_kriterium_id", "kriterium_beschreibung_2", "kriterium_wert"],
+            ["kriterium_id", "antwort_text", "antwort_wert", "ziel_kriterium_id"],
             "antwortmapping"
         )
 

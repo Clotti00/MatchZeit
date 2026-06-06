@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="Update: aufgeräumt, Geofencing als zusätzliches Kriterium">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
-    </list>
+    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="Verfügbare Sprache in Programmvergleichstabelle richtig angezeigt" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -308,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780727761890</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Verfügbare Sprache in Programmvergleichstabelle richtig angezeigt">
+      <option name="closed" value="true" />
+      <created>1780730538528</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1780730538528</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -323,7 +328,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Überschrift verändert, Top 3 Übersicht entfernt, Ergebnisse über Druckfunktion des Browsers speichern" />
     <MESSAGE value="Neue name_kriterium, kein neutral bei multiselect" />
     <MESSAGE value="neutral wird mit 0,5 bewertet" />
     <MESSAGE value="egal entfernt" />
@@ -348,6 +352,7 @@
     <MESSAGE value="Preis mit anzeigen" />
     <MESSAGE value="aufgeräumt, Geofencing als zusätzliches Kriterium" />
     <MESSAGE value="Update: aufgeräumt, Geofencing als zusätzliches Kriterium" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update: aufgeräumt, Geofencing als zusätzliches Kriterium" />
+    <MESSAGE value="Verfügbare Sprache in Programmvergleichstabelle richtig angezeigt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Verfügbare Sprache in Programmvergleichstabelle richtig angezeigt" />
   </component>
 </project>

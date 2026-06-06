@@ -79,7 +79,7 @@ def lade_excel_datei(pfad: str):
 
         pruefe_spalten(
             fragen,
-            ["kriterium_id", "abhaengig_von_kriterium_id", "abhaengig_von_antwort", "frage_text", "antwort_datentyp", "option_1", "option_2", "option_3", "option_4"],
+            ["kriterium_id", "abhaengig_von_kriterium_id", "abhaengig_von_antwort", "frage_text", "frage_hilfetext", "antwort_datentyp", "option_1", "option_2", "option_3", "option_4"],
             "fragen"
         )
 

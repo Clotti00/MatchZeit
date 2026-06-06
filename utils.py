@@ -563,6 +563,7 @@ def zeige_fragebogen(fragen):
 
     kriterium_id = aktuelle_frage["kriterium_id"]
     frage_text = aktuelle_frage["frage_text"]
+    frage_hilfetext = aktuelle_frage["frage_hilfetext"]
     antwort_datentyp = aktuelle_frage["antwort_datentyp"]
     optionen = hole_optionen(aktuelle_frage)
 
@@ -572,6 +573,9 @@ def zeige_fragebogen(fragen):
     )
 
     st.markdown(f"### {frage_text}")
+
+    if pd.notna(frage_hilfetext) and str(frage_hilfetext).strip() != "": # falls "frage_hilfetext" leer -> wird nicht angezeigt
+        st.caption(frage_hilfetext)
 
     if antwort_datentyp == "multiple_select":
         ausgewaehlte_optionen = []

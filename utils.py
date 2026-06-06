@@ -61,6 +61,8 @@ def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, 
             st.write(f"**Erfassungsmedien:** {programm['erfassungsmedium']}")
         if pd.notna(programm["besonderheiten"]):
             st.write(f"**Besonderheiten:** {programm['besonderheiten']}")
+        if pd.notna(programm["preis"]):
+            st.write(f"**Preis:** {programm['preis']}")
 
         st.write(
             f"**Matching:** {programm['matching_prozent']} %"

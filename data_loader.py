@@ -61,7 +61,7 @@ def lade_excel_datei(pfad: str):
 
         pruefe_spalten(     # jeweilige Spalten in dem jeweiligen Tabellenblatt prüfen
             programme_info,
-            ["programm_id", "programm_name", "anbieter", "website", "kurzbeschreibung", "zielgruppe", "erfassungsmedium", "besonderheiten"],
+            ["programm_id", "programm_name", "anbieter", "website", "kurzbeschreibung", "zielgruppe", "erfassungsmedium", "besonderheiten", "preis"],
             "programme_info"
         )
 

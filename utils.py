@@ -29,7 +29,7 @@ def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, 
         ascending=False
     ).head(3)
 
-    st.subheader("Top 3 Matching-Ergebnisse")  # kurze Ausgabe: Platz 1: Name des Programms (matching_prozent)
+    st.subheader("Empfohlene Programme")  # kurze Ausgabe: Platz 1: Name des Programms (matching_prozent)
 
     for platz, (_, programm) in enumerate(top_ergebnisse.iterrows(), start=1):
         st.write(
@@ -425,6 +425,19 @@ def waehle_ko_kriterien(nutzerwerte, kriterien):
 
     auswahl = []
 
+    # ausgewählte KO-Kriterien oben anzeigen lassen
+
+    if aktuelle_auswahl:
+        for kriterium_id in aktuelle_auswahl:
+            kriterium_name = kriterien.loc[
+                kriterien["kriterium_id"] == kriterium_id,
+                "kriterium_name"
+            ].iloc[0]
+
+            st.success(f"✓ {kriterium_name}")
+    else:
+        st.caption("Noch keine KO-Kriterien ausgewählt.")
+
     with st.container(height=400):
 
         for anzeigename, kriterium_id in optionen.items():
@@ -535,7 +548,6 @@ def hole_optionen(frage):
 # erstellt Fragebogen in Streamlit, zeigt Fragen an
 # speichert Antworten des Nutzers in einem Dictionary "nutzerantworten"
 def zeige_fragebogen(fragen):
-    st.subheader("Fragebogen")
 
     if "frage_index" not in st.session_state:
         st.session_state.frage_index = 0
@@ -567,10 +579,21 @@ def zeige_fragebogen(fragen):
     antwort_datentyp = aktuelle_frage["antwort_datentyp"]
     optionen = hole_optionen(aktuelle_frage)
 
-    st.write(
-        f"**Frage {st.session_state.frage_index + 1} "
-        f"von {len(sichtbare_fragen)}**"
-    )
+    col1, col2 = st.columns([3, 1])
+
+    with col1:
+        st.subheader("Fragebogen")
+
+    with col2:
+        st.markdown(
+            f"<div style='text-align:right; margin-top:12px; font-weight:600;'>"
+            f"Frage {st.session_state.frage_index + 1} von {len(sichtbare_fragen)}"
+            f"</div>",
+            unsafe_allow_html=True
+        )
+
+    # Trennlinie zwichen Frage X von Y und Frage
+    st.divider()
 
     st.markdown(f"### {frage_text}")
 
@@ -596,6 +619,12 @@ def zeige_fragebogen(fragen):
 
         antwort = ausgewaehlte_optionen
         nutzerantworten[kriterium_id] = antwort
+
+        # Trennlinie zwischen Antwortmöglichkeiten und Navigationsbuttons
+        st.markdown(
+            "<hr style='margin-top:20px; margin-bottom:20px; border:1px solid #e5e5e5;'>",
+            unsafe_allow_html=True
+        )
 
         st.write("") # Leerzeile zwischen Dropdown und Buttons
 
@@ -644,6 +673,12 @@ def zeige_fragebogen(fragen):
                 nutzerantworten[kriterium_id] = option
                 st.session_state.frage_index += 1
                 st.rerun()
+
+        # Trennlinie zwischen Antwortmöglichkeiten und Navigationsbuttons
+        st.markdown(
+            "<hr style='margin-top:20px; margin-bottom:20px; border:1px solid #e5e5e5;'>",
+            unsafe_allow_html=True
+        )
 
         st.write("")
 

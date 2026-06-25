@@ -16,7 +16,22 @@ from utils import (
     waehle_doppelte_gewichtung,
     erzeuge_ergebnis_html,
 )
-st.title("MatchZeit")
+
+# Seitenabstände verkleinern
+st.markdown("""
+<style>
+.block-container {
+    padding-top: 1.2rem;
+    padding-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    margin-top: 0rem;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.header("MatchZeit")
 
 pfad = "data/Programmliste_Kriterien_Python.xlsx"
 
@@ -88,7 +103,7 @@ else:
             nutzerantworten = zeige_fragebogen(fragen)
 
         elif st.session_state.seite == "ko":
-            st.header("KO-Kriterien")
+            st.subheader("KO-Kriterien")
 
             nutzerantworten = st.session_state.nutzerantworten
 
@@ -131,7 +146,7 @@ else:
 
 
         elif st.session_state.seite == "gewichtung":
-            st.header("Gewichtung")
+            st.subheader("Gewichtung")
 
             nutzerantworten = st.session_state.nutzerantworten
 

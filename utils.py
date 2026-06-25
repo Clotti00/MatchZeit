@@ -426,17 +426,24 @@ def waehle_ko_kriterien(nutzerwerte, kriterien):
     auswahl = []
 
     # ausgewählte KO-Kriterien oben anzeigen lassen
-
     if aktuelle_auswahl:
+        ausgewaehlte_namen = []
+
         for kriterium_id in aktuelle_auswahl:
             kriterium_name = kriterien.loc[
                 kriterien["kriterium_id"] == kriterium_id,
                 "kriterium_name"
             ].iloc[0]
 
-            st.success(f"✓ {kriterium_name}")
+            ausgewaehlte_namen.append(kriterium_name)
+
+        st.caption(
+            "Ausgewählte KO-Kriterien: "
+            + " | ".join(ausgewaehlte_namen)
+        )
+
     else:
-        st.caption("Noch keine KO-Kriterien ausgewählt.")
+        st.caption("Ausgewählte KO-Kriterien: keine")
 
     with st.container(height=400):
 

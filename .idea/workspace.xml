@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="kein Zurück-Button bei Frage 1">
+    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="Top 3 Matching-Ergebnisse zu &quot;Empfohlene Programme&quot;, Schriftgröße und Layout angepasst">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
@@ -333,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782387807317</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Top 3 Matching-Ergebnisse zu &quot;Empfohlene Programme&quot;, Schriftgröße und Layout angepasst">
+      <option name="closed" value="true" />
+      <created>1782391907714</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1782391907714</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -348,7 +356,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="egal entfernt" />
     <MESSAGE value="Evaluierungsfragebogen per E-Mail versendbar" />
     <MESSAGE value="Evaluierungsfragebogen per E-Mail in EXCEL-Format versendbar" />
     <MESSAGE value="Platz zwischen Antwortmöglichkeiten und Zurück-Button, &quot;Frage überspringen&quot; bei Multiselect wird als Antwort gespeichert" />
@@ -373,6 +380,7 @@
     <MESSAGE value="Verfügbare Sprache in Programmvergleichstabelle richtig angezeigt" />
     <MESSAGE value="Erklärung zur Frage im Fragebogen klein darunter" />
     <MESSAGE value="kein Zurück-Button bei Frage 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="kein Zurück-Button bei Frage 1" />
+    <MESSAGE value="Top 3 Matching-Ergebnisse zu &quot;Empfohlene Programme&quot;, Schriftgröße und Layout angepasst" />
+    <option name="LAST_COMMIT_MESSAGE" value="Top 3 Matching-Ergebnisse zu &quot;Empfohlene Programme&quot;, Schriftgröße und Layout angepasst" />
   </component>
 </project>

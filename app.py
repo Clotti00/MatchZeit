@@ -258,5 +258,206 @@ else:
                 nutzerwerte
             )
 
+        # Über MatchZeit
+        elif st.session_state.seite == "ueber":
+
+            st.subheader("Über MatchZeit")
+
+            st.markdown("""
+            ### Ziel und Zweck von MatchZeit
+
+            MatchZeit ist ein webbasiertes Entscheidungshilfesystem zur Auswahl von Softwarelösungen für die Erfassung von Arbeitszeiten in landwirtschaftlichen Betrieben. Ziel ist es, Betriebe dabei zu unterstützen, aus einer Vielzahl verfügbarer Programme diejenigen zu identifizieren, die den individuellen Anforderungen möglichst gut entsprechen.
+
+            ---
+
+            ### Hintergrund der Entwicklung
+
+            Die Anwendung wurde im Rahmen einer Masterarbeit im Studiengang Landwirtschaft (M.Sc.) an der Hochschule Anhalt entwickelt. Ausgangspunkt war die Fragestellung, wie landwirtschaftliche Betriebe bei der Auswahl geeigneter Arbeitszeiterfassungssoftware systematisch und nachvollziehbar unterstützt werden können.
+
+            ---
+
+            ### Funktionsweise
+
+            Im Fragebogen werden zunächst die Anforderungen und Präferenzen des Nutzers erfasst. Optional können bis zu drei KO-Kriterien festgelegt werden, die eine Software zwingend erfüllen muss. Zusätzlich besteht die Möglichkeit, einzelne Anforderungen höher zu gewichten.
+
+            Anschließend werden die Eingaben mit den in MatchZeit hinterlegten Eigenschaften der verfügbaren Softwarelösungen verglichen. Aus diesem Vergleich wird für jedes Programm ein Matching-Wert berechnet, der die Übereinstimmung zwischen den Nutzeranforderungen und den Programmeigenschaften widerspiegelt.
+
+            ---
+
+            ### Interpretation der Ergebnisse
+
+            Die angezeigten Ergebnisse stellen eine Entscheidungshilfe dar. Ein hoher Matching-Wert bedeutet, dass eine Software die angegebenen Anforderungen besonders gut erfüllt. Die endgültige Auswahl einer Software sollte jedoch zusätzlich unter Berücksichtigung individueller betrieblicher Anforderungen sowie einer eigenen Prüfung der Programme erfolgen.
+
+            Die Bewertung der Softwarelösungen basiert auf dem im Rahmen der Masterarbeit erarbeiteten Kriterienkatalog und dem zum Zeitpunkt der Erstellung verfügbaren Informationsstand. Änderungen an Softwarefunktionen oder Preisen nach diesem Zeitpunkt können dazu führen, dass einzelne Angaben nicht mehr aktuell sind.
+
+            ---
+
+            ### Hinweise zur Nutzung
+
+            Die Nutzung von MatchZeit ist kostenfrei. Die im Matching eingegebenen Antworten werden nicht dauerhaft gespeichert. Die Teilnahme am freiwilligen Evaluierungsfragebogen dient ausschließlich der wissenschaftlichen Auswertung und Weiterentwicklung des Systems im Rahmen der Masterarbeit.
+            """)
+
+            if st.button("Zurück"):
+                st.session_state.seite = st.session_state.vorherige_seite
+                st.rerun()
+
+        # Impressum
+        elif st.session_state.seite == "impressum":
+
+            st.subheader("Impressum")
+
+            st.markdown("""
+            Claudia Bäuerlein
+
+            Lindenhof 7  
+            38828 Wegeleben
+
+            E-Mail-Adresse: claudia.baeuerlein@hs-anhalt.de
+
+            Hochschule Anhalt  
+            Landwirtschaft (M.Sc.)
+            """)
+
+            if st.button("Zurück"):
+                st.session_state.seite = st.session_state.vorherige_seite
+                st.rerun()
+
+        # Datenschutzhinweise
+        elif st.session_state.seite == "datenschutz":
+
+            st.subheader("Datenschutzhinweise")
+
+            st.markdown("""
+            ### 1. Verantwortliche Person
+
+            Claudia Bäuerlein
+
+            Lindenhof 7  
+            38828 Wegeleben
+
+            MatchZeit@gmail.com
+
+            ---
+
+            ### 2. Zweck der Datenverarbeitung
+
+            MatchZeit wurde im Rahmen einer Masterarbeit an der Hochschule Anhalt entwickelt. Die im Evaluierungsfragebogen erhobenen Daten dienen ausschließlich der wissenschaftlichen Evaluation und Verbesserung des Systems sowie der Auswertung im Rahmen der Masterarbeit.
+
+            ---
+
+            ### 3. Welche Daten werden erhoben?
+
+            - Alter
+            - Tätigkeit in der Landwirtschaft
+            - Beteiligung an betrieblichen Entscheidungen
+            - Antworten auf die Bewertungsfragen
+            - Freitextantworten
+            - Zeitpunkt der Übermittlung
+
+            Die Nutzung des eigentlichen Matching-Tools erfolgt ohne Speicherung der eingegebenen Antworten.
+
+            ---
+
+            ### 4. Freiwilligkeit
+
+            Die Teilnahme am Evaluierungsfragebogen ist freiwillig. Die Nutzung von MatchZeit ist auch ohne Teilnahme an der Evaluation möglich.
+
+            ---
+
+            ### 5. Rechtsgrundlage der Datenverarbeitung
+
+            Die Verarbeitung der im Evaluierungsfragebogen erhobenen personenbezogenen Daten erfolgt ausschließlich auf Grundlage Ihrer freiwilligen Einwilligung gemäß Art. 6 Abs. 1 lit. a Datenschutz-Grundverordnung (DSGVO).
+
+            Mit dem Absenden des Evaluierungsfragebogens und der zuvor erteilten Einwilligung erklären Sie sich damit einverstanden, dass Ihre Angaben zum Zweck der wissenschaftlichen Evaluation und Auswertung im Rahmen der Masterarbeit verarbeitet werden.
+
+            Die Einwilligung ist freiwillig und kann jederzeit mit Wirkung für die Zukunft widerrufen werden. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt hiervon unberührt.
+
+            ---
+
+            ### 6. Empfänger der Daten
+
+            Die Daten werden per verschlüsselter E-Mail an die Verantwortliche übermittelt und ausschließlich für die wissenschaftliche Auswertung der Masterarbeit verwendet.
+
+            ---
+
+            ### 7. Speicherdauer
+
+            Die erhobenen Daten werden ausschließlich für die Durchführung und Dokumentation der Masterarbeit gespeichert und nach Abschluss der wissenschaftlichen Arbeiten gelöscht.
+
+            ---
+
+            ### 8. Weitergabe
+
+            Eine Weitergabe personenbezogener Daten an Dritte erfolgt nicht.
+
+            ---
+
+            ### 9. Betroffenenrechte
+
+            Sie haben im Rahmen der geltenden datenschutzrechtlichen Bestimmungen das Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten. Darüber hinaus haben Sie das Recht auf Berichtigung unrichtiger Daten, auf Löschung Ihrer Daten sowie auf Einschränkung der Verarbeitung, soweit die gesetzlichen Voraussetzungen hierfür vorliegen.
+
+            Eine erteilte Einwilligung zur Verarbeitung Ihrer personenbezogenen Daten können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Der Widerruf berührt nicht die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung.
+
+            Bei Fragen zur Verarbeitung Ihrer personenbezogenen Daten oder zur Ausübung Ihrer Rechte können Sie sich an die im Impressum genannte verantwortliche Person wenden.
+
+            ---
+
+            ### 10. Kontakt
+
+            Claudia Bäuerlein
+
+            Lindenhof 7  
+            38828 Wegeleben
+
+            MatchZeit@gmail.com
+            """)
+
+            if st.button("Zurück"):
+                st.session_state.seite = st.session_state.vorherige_seite
+                st.rerun()
+
     except Exception as e:
         st.error(str(e))
+
+st.write("")
+st.write("")
+
+# Über MatchZeit, Impressum, Datenschutzhinweise
+col1, col2, col3, col4, col5 = st.columns(
+    [0.53, 0.1, 0.39, 0.1, 2]
+)
+
+
+
+with col1:
+    if st.button("Über MatchZeit", type="tertiary"):
+        if st.session_state.seite not in ["ueber", "impressum", "datenschutz"]:
+            st.session_state.vorherige_seite = st.session_state.seite
+        st.session_state.seite = "ueber"
+        st.rerun()
+
+with col2:
+    st.markdown(
+        "<div style='text-align:center;color:#999;padding-top:8px;'>|</div>",
+        unsafe_allow_html=True
+    )
+
+with col3:
+    if st.button("Impressum", type="tertiary"):
+        if st.session_state.seite not in ["ueber", "impressum", "datenschutz"]:
+            st.session_state.vorherige_seite = st.session_state.seite
+        st.session_state.seite = "impressum"
+        st.rerun()
+
+with col4:
+    st.markdown(
+        "<div style='text-align:center;color:#999;padding-top:8px;'>|</div>",
+        unsafe_allow_html=True
+    )
+
+with col5:
+    if st.button("Datenschutzhinweise", type="tertiary"):
+        if st.session_state.seite not in ["ueber", "impressum", "datenschutz"]:
+            st.session_state.vorherige_seite = st.session_state.seite
+        st.session_state.seite = "datenschutz"
+        st.rerun()

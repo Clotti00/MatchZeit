@@ -602,13 +602,13 @@ def zeige_fragebogen(fragen):
         col1, col2, col3 = st.columns(3)
 
         with col1:
-            if st.button(
-                    "Zurück",
-                    disabled=st.session_state.frage_index == 0,
-                    use_container_width=True
-            ):
-                st.session_state.frage_index -= 1
-                st.rerun()
+            if st.session_state.frage_index > 0:
+                if st.button(
+                        "Zurück",
+                        use_container_width=True
+                ):
+                    st.session_state.frage_index -= 1
+                    st.rerun()
 
         with col2:
             if st.button(
@@ -650,13 +650,13 @@ def zeige_fragebogen(fragen):
         col1, col2, col3 = st.columns(3)
 
         with col1:
-            if st.button(
-                    "Zurück",
-                    use_container_width=True,
-                    disabled=st.session_state.frage_index == 0
-            ):
-                st.session_state.frage_index -= 1
-                st.rerun()
+            if st.session_state.frage_index > 0:
+                if st.button(
+                        "Zurück",
+                        use_container_width=True
+                ):
+                    st.session_state.frage_index -= 1
+                    st.rerun()
 
         with col2:
             if kriterium_id in nutzerantworten:

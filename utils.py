@@ -32,7 +32,7 @@ def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, 
     # kurze Ausgabe: Platz 1: Name des Programms (matching_prozent)
     st.markdown(
         "### Empfohlene Programme",
-        help="Die Programme sind nach ihrer Übereinstimmung mit Ihren Anforderungen sortiert. Ein höherer Matching-Wert bedeutet eine bessere Übereinstimmung. Die Ergebnisse dienen als Entscheidungshilfe und ersetzen keine eigene Prüfung der Software."
+        help=""" Die Programme sind nach ihrer Übereinstimmung mit Ihren Anforderungen sortiert. Ein höherer Matching-Wert bedeutet eine bessere Übereinstimmung. Die Ergebnisse stellen eine Entscheidungshilfe dar und ersetzen keine eigene Prüfung der Software."""
     )
 
     for platz, (_, programm) in enumerate(top_ergebnisse.iterrows(), start=1):
@@ -333,14 +333,14 @@ def waehle_doppelte_gewichtung(nutzerantworten, fragen, ausgeschlossene_kriterie
     if ausgeschlossene_kriterien is None: # KO-Fragen sind ausgeschlossen für Auswahl Gewichtung
         ausgeschlossene_kriterien = []
 
-    st.write(
-        """
-        Sie können einzelne Antworten als besonders wichtig markieren.
-        Ausgewählte Antworten werden im Matching doppelt gewichtet.
-        Das bedeutet: Wenn ein Programm diese Anforderungen erfüllt,
-        wirkt sich das stärker positiv auf das Ergebnis aus.
-        """
-    )
+    # st.write(
+    #     """
+    #     Sie können einzelne Antworten als besonders wichtig markieren.
+    #     Ausgewählte Antworten werden im Matching doppelt gewichtet.
+    #     Das bedeutet: Wenn ein Programm diese Anforderungen erfüllt,
+    #     wirkt sich das stärker positiv auf das Ergebnis aus.
+    #     """
+    # )
 
     beantwortete_fragen = fragen[
         fragen["kriterium_id"].isin(nutzerantworten.keys()) &

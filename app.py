@@ -74,6 +74,7 @@ if st.session_state.seite == "start":
         """
         Dieses Programm hilft Ihnen dabei, anhand Ihrer individuellen Anforderungen
         passende Software zur Erfassung von Arbeitszeit zu finden.
+        
 
         **So funktioniert’s:**
 
@@ -85,6 +86,13 @@ if st.session_state.seite == "start":
 
         Klicken Sie auf **„Matching starten“**, um zu beginnen.
         """
+    )
+
+    st.info(
+        "Für eine optimale Nutzung wird die Verwendung eines PCs "
+        "oder Laptops mit einem aktuellen Webbrowser empfohlen. "
+        "Die Anwendung ist grundsätzlich auch auf mobilen Geräten nutzbar, "
+        "der Bedienkomfort kann dort jedoch eingeschränkt sein. "
     )
 
     if st.button("Matching starten"):
@@ -150,7 +158,7 @@ else:
         elif st.session_state.seite == "gewichtung":
             st.markdown(
                 "### Gewichtung",
-                help="Hier können Sie einzelne Antworten als besonders wichtig markieren. Diese Antworten werden bei der Berechnung des Matchings doppelt gewichtet und beeinflussen das Ergebnis entsprechend stärker."
+                help="Hier können Sie einzelne Antworten als besonders wichtig markieren. Diese Antworten werden bei der Berechnung des Matchings doppelt gewichtet. Das bedeutet: Wenn ein Programm diese Anforderungen erfüllt, wirkt sich das stärker positiv auf das Ergebnis aus. Durch Ihre Entscheidung werden keine Programme komplett aus der Ergebnisberechnung ausgeschlossen. Diejenigen Kriterien, die bereits als KO-Kriterium ausgewählt worden sind, befinden sich nicht mehr in dieser Aufzählung."
             )
 
             nutzerantworten = st.session_state.nutzerantworten
@@ -333,24 +341,14 @@ else:
             st.subheader("Datenschutzhinweise")
 
             st.markdown("""
-            ### 1. Verantwortliche Person
 
-            Claudia Bäuerlein
-
-            Lindenhof 7  
-            38828 Wegeleben
-
-            matchzeit@gmail.com
-
-            ---
-
-            ### 2. Zweck der Datenverarbeitung
+            ### 1. Zweck der Datenverarbeitung
 
             MatchZeit wurde im Rahmen einer Masterarbeit an der Hochschule Anhalt entwickelt. Die im Evaluierungsfragebogen erhobenen Daten dienen ausschließlich der wissenschaftlichen Evaluation und Verbesserung des Systems sowie der Auswertung im Rahmen der Masterarbeit.
 
             ---
 
-            ### 3. Welche Daten werden erhoben?
+            ### 2. Welche Daten werden erhoben?
 
             - Alter
             - Tätigkeit in der Landwirtschaft
@@ -363,13 +361,13 @@ else:
 
             ---
 
-            ### 4. Freiwilligkeit
+            ### 3. Freiwilligkeit
 
             Die Teilnahme am Evaluierungsfragebogen ist freiwillig. Die Nutzung von MatchZeit ist auch ohne Teilnahme an der Evaluation möglich.
 
             ---
 
-            ### 5. Rechtsgrundlage der Datenverarbeitung
+            ### 4. Rechtsgrundlage der Datenverarbeitung
 
             Die Verarbeitung der im Evaluierungsfragebogen erhobenen personenbezogenen Daten erfolgt ausschließlich auf Grundlage Ihrer freiwilligen Einwilligung gemäß Art. 6 Abs. 1 lit. a Datenschutz-Grundverordnung (DSGVO).
 
@@ -379,25 +377,25 @@ else:
 
             ---
 
-            ### 6. Empfänger der Daten
+            ### 5. Empfänger der Daten
 
-            Die Daten werden per verschlüsselter E-Mail an die Verantwortliche übermittelt und ausschließlich für die wissenschaftliche Auswertung der Masterarbeit verwendet.
+            Die Daten werden per E-Mail an die verantwortliche Person übermittelt und ausschließlich für die wissenschaftliche Auswertung der Masterarbeit verwendet.
 
             ---
 
-            ### 7. Speicherdauer
+            ### 6. Speicherdauer
 
             Die erhobenen Daten werden ausschließlich für die Durchführung und Dokumentation der Masterarbeit gespeichert und nach Abschluss der wissenschaftlichen Arbeiten gelöscht.
 
             ---
 
-            ### 8. Weitergabe
+            ### 7. Weitergabe
 
             Eine Weitergabe personenbezogener Daten an Dritte erfolgt nicht.
 
             ---
 
-            ### 9. Betroffenenrechte
+            ### 8. Betroffenenrechte
 
             Sie haben im Rahmen der geltenden datenschutzrechtlichen Bestimmungen das Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten. Darüber hinaus haben Sie das Recht auf Berichtigung unrichtiger Daten, auf Löschung Ihrer Daten sowie auf Einschränkung der Verarbeitung, soweit die gesetzlichen Voraussetzungen hierfür vorliegen.
 
@@ -407,7 +405,7 @@ else:
 
             ---
 
-            ### 10. Kontakt
+            ### 9. Verantwortliche Person
 
             Claudia Bäuerlein
 

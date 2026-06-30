@@ -312,7 +312,7 @@ else:
             Lindenhof 7  
             38828 Wegeleben
 
-            E-Mail-Adresse: claudia.baeuerlein@hs-anhalt.de
+            E-Mail-Adresse: matchzeit@gmail.com
 
             Hochschule Anhalt  
             Landwirtschaft (M.Sc.)

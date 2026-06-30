@@ -583,6 +583,7 @@ def zeige_fragebogen(fragen):
     kriterium_id = aktuelle_frage["kriterium_id"]
     frage_text = aktuelle_frage["frage_text"]
     frage_hilfetext = aktuelle_frage["frage_hilfetext"]
+    frage_information = aktuelle_frage["frage_information"]
     antwort_datentyp = aktuelle_frage["antwort_datentyp"]
     optionen = hole_optionen(aktuelle_frage)
 
@@ -602,7 +603,20 @@ def zeige_fragebogen(fragen):
     # Trennlinie zwichen Frage X von Y und Frage
     st.divider()
 
-    st.markdown(f"### {frage_text}")
+    # Info-Fragezeichen
+    if pd.notna(frage_information) and str(frage_information).strip() != "":
+        st.markdown(
+            f"### {frage_text}",
+            help=frage_information
+        )
+    else:
+        st.markdown(f"### {frage_text}")
+
+    # Option 2:
+    # st.markdown(
+    #     f"### {frage_text}",
+    #     help=frage_information
+    # )
 
     if pd.notna(frage_hilfetext) and str(frage_hilfetext).strip() != "": # falls "frage_hilfetext" leer -> wird nicht angezeigt
         st.caption(frage_hilfetext)

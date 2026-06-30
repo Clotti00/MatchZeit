@@ -11,8 +11,8 @@ from datetime import datetime
 from email.message import EmailMessage
 
 def sende_evaluierung_per_email(antworten):
-    absender_email = "otto.winfred@gmail.com"
-    empfaenger_email = "otto.winfred@gmail.com"
+    absender_email = "matchzeit@gmail.com"
+    empfaenger_email = "matchzeit@gmail.com"
     app_passwort = st.secrets["gmail_app_passwort"]
 
     betreff = "Neue Evaluation MatchZeit"

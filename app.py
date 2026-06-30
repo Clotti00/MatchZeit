@@ -335,7 +335,7 @@ else:
             Lindenhof 7  
             38828 Wegeleben
 
-            MatchZeit@gmail.com
+            matchzeit@gmail.com
 
             ---
 
@@ -409,7 +409,7 @@ else:
             Lindenhof 7  
             38828 Wegeleben
 
-            MatchZeit@gmail.com
+            matchzeit@gmail.com
             """)
 
             if st.button("Zurück"):

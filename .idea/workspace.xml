@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="Datenschutzhinweise, Impressum, Über MatchZeit">
+    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="Info Fragezeichen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Programmliste_Kriterien_Python.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/Programmliste_Kriterien_Python.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -350,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782415324483</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Info Fragezeichen">
+      <option name="closed" value="true" />
+      <created>1782799410081</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1782799410081</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -365,7 +371,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Evaluierungsfragebogen per E-Mail in EXCEL-Format versendbar" />
     <MESSAGE value="Platz zwischen Antwortmöglichkeiten und Zurück-Button, &quot;Frage überspringen&quot; bei Multiselect wird als Antwort gespeichert" />
     <MESSAGE value="EXCEl-Datei bereinigt, Antwortmapping durchgeschaut" />
     <MESSAGE value="app_passwort auslagern" />
@@ -390,6 +395,7 @@
     <MESSAGE value="kein Zurück-Button bei Frage 1" />
     <MESSAGE value="Top 3 Matching-Ergebnisse zu &quot;Empfohlene Programme&quot;, Schriftgröße und Layout angepasst" />
     <MESSAGE value="Datenschutzhinweise, Impressum, Über MatchZeit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Datenschutzhinweise, Impressum, Über MatchZeit" />
+    <MESSAGE value="Info Fragezeichen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Info Fragezeichen" />
   </component>
 </project>

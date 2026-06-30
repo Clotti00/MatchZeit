@@ -29,7 +29,11 @@ def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, 
         ascending=False
     ).head(3)
 
-    st.subheader("Empfohlene Programme")  # kurze Ausgabe: Platz 1: Name des Programms (matching_prozent)
+    # kurze Ausgabe: Platz 1: Name des Programms (matching_prozent)
+    st.markdown(
+        "### Empfohlene Programme",
+        help="Die Programme sind nach ihrer Übereinstimmung mit Ihren Anforderungen sortiert. Ein höherer Matching-Wert bedeutet eine bessere Übereinstimmung. Die Ergebnisse dienen als Entscheidungshilfe und ersetzen keine eigene Prüfung der Software."
+    )
 
     for platz, (_, programm) in enumerate(top_ergebnisse.iterrows(), start=1):
         st.write(

@@ -103,8 +103,10 @@ else:
             nutzerantworten = zeige_fragebogen(fragen)
 
         elif st.session_state.seite == "ko":
-            st.subheader("KO-Kriterien")
-
+            st.markdown(
+                "### KO-Kriterien",
+                help="KO-Kriterien sind Anforderungen, die eine Software zwingend erfüllen muss. Programme, die mindestens eines dieser Kriterien nicht erfüllen, werden aus den Matching-Ergebnissen ausgeschlossen."
+            )
             nutzerantworten = st.session_state.nutzerantworten
 
             nutzerwerte = mappe_antworten_auf_werte(
@@ -146,7 +148,10 @@ else:
 
 
         elif st.session_state.seite == "gewichtung":
-            st.subheader("Gewichtung")
+            st.markdown(
+                "### Gewichtung",
+                help="Hier können Sie einzelne Antworten als besonders wichtig markieren. Diese Antworten werden bei der Berechnung des Matchings doppelt gewichtet und beeinflussen das Ergebnis entsprechend stärker."
+            )
 
             nutzerantworten = st.session_state.nutzerantworten
 

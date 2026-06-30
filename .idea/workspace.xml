@@ -4,18 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="Info-Fragezeichen bei KO-Kriterien, Gewichtung und empfohlene Ergebnisse">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Programmliste_Kriterien_Python.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/Programmliste_Kriterien_Python.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
-    </list>
+    <list default="true" id="369d7084-3e67-4407-bba3-2d5f2e446050" name="Changes" comment="Info bei Startseite über PC als Favorit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="Stand-02.06.2026" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -382,7 +403,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782805776760</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Info bei Startseite über PC als Favorit">
+      <option name="closed" value="true" />
+      <created>1782837014713</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1782837014713</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -397,7 +426,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="EXCEL korrekt speichern" />
     <MESSAGE value="Evaluierung Fragebogen überarbeitet, Frage nach Demografie und Datennutzung, Fragen gekürzt" />
     <MESSAGE value="Ergebnisstabelle farblich gestaltet, Überscchrift &quot;Ergebnisse&quot; entfernt" />
     <MESSAGE value="Button &quot;Ergebnisse speichern&quot; fest oben rechts anhängen" />
@@ -422,6 +450,7 @@
     <MESSAGE value="E-Mail in matchzeit@gmail.com verändert" />
     <MESSAGE value="Info-Fragezeichen nach jeder Frage ergänzt mit Informationen aus der neuen Spalte frage_information" />
     <MESSAGE value="Info-Fragezeichen bei KO-Kriterien, Gewichtung und empfohlene Ergebnisse" />
-    <option name="LAST_COMMIT_MESSAGE" value="Info-Fragezeichen bei KO-Kriterien, Gewichtung und empfohlene Ergebnisse" />
+    <MESSAGE value="Info bei Startseite über PC als Favorit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Info bei Startseite über PC als Favorit" />
   </component>
 </project>

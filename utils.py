@@ -6,14 +6,6 @@ import pandas as pd
 from evaluation import zeige_evaluierungsfragebogen
 
 #####################
-# zeigt Pop-Up Fenster für zusätzliche Inforamationen
-def zeige_info_popover(infotext):
-    if pd.notna(infotext) and str(infotext).strip() != "":
-        with st.popover("ⓘ"):
-            st.write(infotext)
-#####################
-
-#####################
 # zeigt Matching Ergebnisse
 def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, kriterien, nutzerwerte):
 
@@ -38,17 +30,10 @@ def zeige_matching_ergebnisse(matching_ergebnisse, programme_info, bewertungen, 
     ).head(3)
 
     # kurze Ausgabe: Platz 1: Name des Programms (matching_prozent)
-    col_titel, col_info = st.columns([20, 1])
-
-    with col_titel:
-        st.markdown("### Empfohlene Programme")
-
-    with col_info:
-        zeige_info_popover(
-            "Die Programme sind nach ihrer Übereinstimmung mit Ihren Anforderungen sortiert. "
-            "Ein höherer Matching-Wert bedeutet eine bessere Übereinstimmung. "
-            "Die Ergebnisse stellen eine Entscheidungshilfe dar und ersetzen keine eigene Prüfung der Software."
-        )
+    st.markdown(
+        "### Empfohlene Programme",
+        help=""" Die Programme sind nach ihrer Übereinstimmung mit Ihren Anforderungen sortiert. Ein höherer Matching-Wert bedeutet eine bessere Übereinstimmung. Die Ergebnisse stellen eine Entscheidungshilfe dar und ersetzen keine eigene Prüfung der Software."""
+    )
 
     for platz, (_, programm) in enumerate(top_ergebnisse.iterrows(), start=1):
         st.write(
@@ -348,6 +333,15 @@ def waehle_doppelte_gewichtung(nutzerantworten, fragen, ausgeschlossene_kriterie
     if ausgeschlossene_kriterien is None: # KO-Fragen sind ausgeschlossen für Auswahl Gewichtung
         ausgeschlossene_kriterien = []
 
+    # st.write(
+    #     """
+    #     Sie können einzelne Antworten als besonders wichtig markieren.
+    #     Ausgewählte Antworten werden im Matching doppelt gewichtet.
+    #     Das bedeutet: Wenn ein Programm diese Anforderungen erfüllt,
+    #     wirkt sich das stärker positiv auf das Ergebnis aus.
+    #     """
+    # )
+
     beantwortete_fragen = fragen[
         fragen["kriterium_id"].isin(nutzerantworten.keys()) &
         ~fragen["kriterium_id"].isin(ausgeschlossene_kriterien)
@@ -613,14 +607,20 @@ def zeige_fragebogen(fragen):
     # Trennlinie zwichen Frage X von Y und Frage
     st.divider()
 
-    # # Info-Fragezeichen
-    col_frage, col_info = st.columns([20, 1])
-
-    with col_frage:
+    # Info-Fragezeichen
+    if pd.notna(frage_information) and str(frage_information).strip() != "":
+        st.markdown(
+            f"### {frage_text}",
+            help=frage_information
+        )
+    else:
         st.markdown(f"### {frage_text}")
 
-    with col_info:
-        zeige_info_popover(frage_information)
+    # Option 2:
+    # st.markdown(
+    #     f"### {frage_text}",
+    #     help=frage_information
+    # )
 
     if pd.notna(frage_hilfetext) and str(frage_hilfetext).strip() != "": # falls "frage_hilfetext" leer -> wird nicht angezeigt
         st.caption(frage_hilfetext)

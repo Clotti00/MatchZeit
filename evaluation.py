@@ -102,7 +102,6 @@ def zeige_evaluierungsfragebogen():
     #####################
     # Angaben zur Person
     #####################
-
     st.subheader("Angaben zur Person")
 
     antworten["alter"] = st.number_input(

@@ -93,6 +93,4 @@ def lade_excel_datei(pfad: str):
 
     except Exception as e: # Exception: Fehler bzw. unerwartetes Ergebnis während Programmausführung, Speicherung in Variable e
         raise Exception(f"Fehler beim Laden der Excel-Datei: {e}") # raise: beendet Programm an dieser Stelle und gibt Fehler aus
-
-
 ##########

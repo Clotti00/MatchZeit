@@ -2,7 +2,7 @@
 # Interaktion mit dem Nutzer##################
 # Streamlit-UI, Fragebogen, Ergebnisanzeige###
 ##############################################
-# Stand 02.06.2026
+# Stand 01.07.2026
 
 import streamlit as st
 from data_loader import lade_excel_datei
@@ -66,7 +66,6 @@ if st.session_state.seite != "ergebnis":
         height=0
     )
 
-
 # Willkommensseite
 if st.session_state.seite == "start":
 
@@ -98,7 +97,6 @@ if st.session_state.seite == "start":
     if st.button("Matching starten"):
         st.session_state.seite = "fragebogen"
         st.rerun()
-
 
 # Fragebogen und Matching
 else:
@@ -153,7 +151,6 @@ else:
                 ):
                     st.session_state.seite = "gewichtung"
                     st.rerun()
-
 
         elif st.session_state.seite == "gewichtung":
             st.markdown(
@@ -322,9 +319,6 @@ else:
             st.markdown("""
             Claudia Bäuerlein
 
-            Lindenhof 7  
-            38828 Wegeleben
-
             E-Mail-Adresse: matchzeit@gmail.com
 
             Hochschule Anhalt  
@@ -409,9 +403,6 @@ else:
 
             Claudia Bäuerlein
 
-            Lindenhof 7  
-            38828 Wegeleben
-
             matchzeit@gmail.com
             """)
 
@@ -429,8 +420,6 @@ st.write("")
 col1, col2, col3, col4, col5 = st.columns(
     [0.53, 0.1, 0.39, 0.1, 2]
 )
-
-
 
 with col1:
     if st.button("Über MatchZeit", type="tertiary"):

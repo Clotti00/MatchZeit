@@ -81,6 +81,7 @@ if st.session_state.seite == "start":
         - Wählen Sie bei Bedarf bis zu drei KO-Kriterien aus oder gewichten Sie Ihre Antworten.
         - Das Programm berechnet passende Übereinstimmungen.
         - Sie erhalten Ihre Ergebnisse übersichtlich angezeigt.
+        - Zielgruppe: landwirtschaftliche Betriebe
         - Bearbeitungszeit: 10-15 Minuten
 
         Klicken Sie auf **„Matching starten“**, um zu beginnen.

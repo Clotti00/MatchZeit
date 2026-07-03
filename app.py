@@ -32,6 +32,7 @@ h1, h2, h3 {
 """, unsafe_allow_html=True)
 
 st.header("MatchZeit")
+st.set_page_config(page_title="MatchZeit", page_icon="stop-watch.png")
 
 pfad = "data/Programmliste_Kriterien_Python.xlsx"
 

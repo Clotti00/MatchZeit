@@ -6,6 +6,7 @@
 
 import streamlit as st
 from data_loader import lade_excel_datei
+from datetime import datetime
 from matching import berechne_matching
 import streamlit.components.v1 as components # Um Druckfunktion im Browser zu öffnen
 from utils import (
@@ -69,6 +70,7 @@ if st.session_state.seite != "ergebnis":
 
 # Willkommensseite
 if st.session_state.seite == "start":
+    print(f"Willkommensseite render: {datetime.now()}")
 
     st.write(
         """

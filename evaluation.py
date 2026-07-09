@@ -126,6 +126,36 @@ def zeige_evaluierungsfragebogen():
         key="eval_entscheidungsbeteiligung"
     )
 
+    #####################
+    # Angaben zur Nutzung
+    #####################
+    st.subheader("Angaben zur Nutzung")
+
+    nutzungsmedium = st.radio(
+        "Mit welchem Medium haben Sie das Tool genutzt?",
+        ["Smartphone", "PC / Laptop", "Sonstiges"],
+        index=None,
+        key="eval_nutzungsmedium"
+    )
+
+    antworten["nutzungsmedium"] = nutzungsmedium
+
+    if nutzungsmedium == "Sonstiges":
+        antworten["nutzungsmedium_sonstiges"] = st.text_input(
+            "Bitte geben Sie das verwendete Medium an:",
+            key="eval_nutzungsmedium_sonstiges"
+        )
+    else:
+        antworten["nutzungsmedium_sonstiges"] = None
+
+    antworten["darkmode_verwendet"] = st.radio(
+        "Wurde das Tool im Darkmode verwendet? "
+        "Damit ist eine dunkle Darstellung gemeint, z. B. weiße Schrift auf schwarzem Hintergrund.",
+        ["Ja", "Nein"],
+        index=None,
+        key="eval_darkmode_verwendet"
+    )
+
     frage_nummer = 1
 
     for themenbereich, fragen_liste in fragen.items():
